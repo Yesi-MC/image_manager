@@ -2,4 +2,14 @@
 
 <h1 align="center"> Welcome to your Dashboard <%= current_user.name %> </h1>
 
-<h3><%= button_to 'Add New Image', new_user_image_path(current_user), method: :get %></h3>
+<h3 align="center"><%= button_to 'Add New Image', new_user_image_path(current_user), method: :get %></h3>
+
+<h2 align="center"> All My Images </h2>
+<div align="center">
+<h3> <% @images.each do |image| %> </h3>
+<section id=image-<%= image.id %> >
+  <h4>Image Title: <%= image.title %></h4>
+  <p>Description: <%= image.description %></p>
+  <%= image_tag("#{image.image_url}", size: "300") %><br>
+  </section>
+<% end %><br>
