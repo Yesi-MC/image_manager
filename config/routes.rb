@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new]
     get '/users/:id/dashboard', to: 'users/dashboard#index', as: :dashboard
     get '/users/:id/image/new', to: 'users/images#new', as: :new_user_image
+    post '/users/:id/image/new', to: 'users/images#create'
+
 end
