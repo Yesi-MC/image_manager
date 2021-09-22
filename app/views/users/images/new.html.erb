@@ -1,0 +1,16 @@
+<h1 align="center">Upload a New Image</h1>
+
+<div align="center">
+<%= form_with url: new_user_image_path(current_user), model: @image, method: :post, local: true do |f|%>
+    <%= f.label :title, "Title: " %><br>
+    <%= f.text_field :title %><br><br>
+
+    <%= f.label :description, "Description: " %><br>
+    <%= f.text_field :description %><br>
+
+    <%= f.label :image_url, "Image URL: " %><br>
+    <%= f.text_field :image_url %><br>
+
+    <%= f.submit "Upload Image" %>
+<% end %>
+</div>
