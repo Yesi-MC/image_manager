@@ -10,7 +10,7 @@ RSpec.describe "As a logged in user" do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user1)
     end 
-    it "can see a button to create notes" do 
+    it "can see a button to create images" do 
       visit dashboard_path(@user1.id)
       
       expect(page).to have_button("Add New Image")
